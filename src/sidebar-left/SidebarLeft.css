@@ -1,0 +1,10 @@
+.sidebar-left-col {
+  /* margin-right: 5px; */
+}
+
+.sidebar-left-container {
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  height: 600px;
+  /* margin-right: 5px */
+}
