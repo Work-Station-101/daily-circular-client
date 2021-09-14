@@ -1,0 +1,24 @@
+.circular-prview-card-div {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.circular-prview-card {
+  width: 100%;
+}
+
+.circular-preview-card-button {
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.circular-preview-card-share-button {
+  float: right;
+}
+
+.card {
+  border-radius: 10px !important;
+}

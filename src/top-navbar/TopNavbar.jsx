@@ -30,7 +30,7 @@ function TopNavbar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
 
 export default TopNavbar;

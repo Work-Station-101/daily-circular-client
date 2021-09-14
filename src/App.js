@@ -1,11 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 import TopNavbar from './top-navbar/TopNavbar';
 import SidebarLeft from './sidebar-left/SidebarLeft';
 import ContentColumn from './content-column/ContentColumn';
+import SidebarRight from './sidebar-right/SidebarRight';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Row className='main-content-row'>
           <SidebarLeft />
           <ContentColumn />
-          <Col md={3}>Col1</Col>
+          <SidebarRight />
         </Row>
       </Container>
     </div>

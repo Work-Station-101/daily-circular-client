@@ -9,7 +9,7 @@ function SidebarLeft() {
       <Container className='sidebar-left-container'>
       </Container>
     </Col>
-  )
+  );
 }
 
 export default SidebarLeft;

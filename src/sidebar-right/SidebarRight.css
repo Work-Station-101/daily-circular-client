@@ -1,8 +1,8 @@
-.sidebar-left-col {
+..sidebar-right-col {
   /* margin-right: 5px; */
 }
 
-.sidebar-left-container {
+.sidebar-right-container {
   border: 1px solid lightblue;
   border-radius: 10px;
   height: 600px;
