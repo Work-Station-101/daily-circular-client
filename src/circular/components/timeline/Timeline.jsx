@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Container } from 'react-bootstrap';
+import { } from 'react-bootstrap';
 import CircularPreviewCard from '../circular-prview-card/CircularPreviewCard';
 
 import './Timeline.css';
 
 function Timeline() {
   return (
-    <Container fluid className='timeline-container overflow-auto'>
+    <div>
       <CircularPreviewCard />
       <CircularPreviewCard />
       <CircularPreviewCard />
@@ -19,7 +19,7 @@ function Timeline() {
       <CircularPreviewCard />
       <CircularPreviewCard />
       <CircularPreviewCard />
-    </Container>
+    </div>
   );
 }
 

@@ -1,5 +1,13 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import {
+  Nav,
+  Navbar,
+  NavDropdown,
+  Container,
+  Form,
+  FormControl,
+  Button,
+} from 'react-bootstrap';
 
 import { RouteUrls } from '../../../config';
 
@@ -22,6 +30,15 @@ function TopNavbar() {
               <NavDropdown.Divider />
               <NavDropdown.Item href='/'>Separated link</NavDropdown.Item>
             </NavDropdown>
+            <Form className="d-flex">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="mr-2"
+                aria-label="Search"
+              />
+              <Button variant="success">Search</Button>
+            </Form>
           </Nav>
           <Nav>
             <Nav.Link href='/'>Notification</Nav.Link>

@@ -1,11 +1,11 @@
 const RouteUrls = {
   default: '/',
-  base: '/app',
+  base: '/',
   login: '/login',
   registration: '/register',
-  timeline: '/app/timeline',
-  myCirculars: '/app/my-circulars',
-  profile: '/app/profile',
+  timeline: '/timeline',
+  myCirculars: '/my-circulars',
+  profile: '/profile',
 };
 
 export default RouteUrls;

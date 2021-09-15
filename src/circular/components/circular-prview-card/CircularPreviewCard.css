@@ -1,4 +1,4 @@
-.circular-prview-card-div {
+.cpc-div {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
@@ -6,19 +6,43 @@
   margin-bottom: 10px;
 }
 
-.circular-prview-card {
-  width: 100%;
+.cpc-header {
+  padding-bottom: 0px;
 }
 
-.circular-preview-card-button {
+.cpc-button {
   margin-right: 10px;
   padding-right: 10px;
 }
 
-.circular-preview-card-share-button {
+.cpc-share-button {
   float: right;
 }
 
 .card {
   border-radius: 10px !important;
+}
+
+.cpc-action-btn {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+.cpc-user-imgae-col {
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.cpc-user-image {
+  height: 50px;
+  width: 50px;
+}
+
+.cpc-user-name-col {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.cpc-date {
+  font-size: 9pt;
 }
