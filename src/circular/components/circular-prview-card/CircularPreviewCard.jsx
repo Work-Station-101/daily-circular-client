@@ -38,9 +38,9 @@ function CircularPreviewCard() {
                 thumbnail
               />
             </Col>
-            <Col 
-            md={7}
-            className='cpc-user-name-col'
+            <Col
+              md={7}
+              className='cpc-user-name-col'
             >
               <h6>{'FirstName LastName'}</h6>
               <p className='cpc-date'>{(new Date()).toDateString()}</p>
@@ -79,7 +79,7 @@ function CircularPreviewCard() {
               </ButtonGroup>
             </Col>
             <Col md={2}>
-              <ButtonGroup>
+              <ButtonGroup style={{ float: 'right' }}>
                 <Button
                   variant='primary'
                   className='cpc-action-btn'
