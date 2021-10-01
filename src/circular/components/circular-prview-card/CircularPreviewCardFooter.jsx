@@ -1,12 +1,24 @@
 import React from 'react';
-import { FaComment, FaEye, FaShare, FaThumbsDown, FaThumbsUp } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import {
+  FaComment,
+  FaEye,
+  FaShare,
+  FaThumbsDown,
+  FaThumbsUp,
+} from 'react-icons/fa';
 import CountBadge from '../count-badge/CountBadge';
 
-const CircularPreviewCardFooter = () => {
+const CircularPreviewCardFooter = ({
+  onClickViewButton,
+}) => {
   return (
     <React.Fragment>
       <div>
-        <button className='cpc-footer-action-btn'>
+        <button
+          className='cpc-footer-action-btn'
+          onClick={onClickViewButton}
+        >
           <FaEye size='30px' />
           <CountBadge count={5} />
         </button>
@@ -33,6 +45,10 @@ const CircularPreviewCardFooter = () => {
       </div>
     </React.Fragment>
   );
+};
+
+CircularPreviewCardFooter.propTypes = {
+  onClickViewButton: PropTypes.func.isRequired,
 };
 
 export default CircularPreviewCardFooter;

@@ -1,16 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 import './CircularModal.css';
 
-function CircularModal({
-  circularId,
+const CircularModal = ({
   showModal,
   handleClose,
-}) {
+  circular,
+}) => {
   return (
-    <Modal show={showModal} onHide={handleClose}>
+    <Modal show={showModal} onHide={handleClose} size='xl'>
       <Modal.Header closeButton>
         <Modal.Title>Modal heading</Modal.Title>
       </Modal.Header>
@@ -25,12 +24,12 @@ function CircularModal({
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 CircularModal.propTypes = {
-  circularId: PropTypes.string,
-  showModal: PropTypes.bool,
-  handleClose: PropTypes.func,
+  showModal: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  circular: PropTypes.object,
 }
 
 export default CircularModal;
