@@ -1,0 +1,8 @@
+.count-badge {
+  background: gray;
+  position: relative;
+  top: -10px;
+  left: -1px;
+  font-size: 5pt;
+  border-radius: 50%;
+}

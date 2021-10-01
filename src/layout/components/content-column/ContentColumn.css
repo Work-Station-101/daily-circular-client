@@ -1,11 +1,11 @@
 .content-col {
-
+  height: 95vh;
 }
 
 .content-column-container {
   border: 1px solid lightblue;
   border-radius: 10px;
-  height: 1000px;
+  height: 100%;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;

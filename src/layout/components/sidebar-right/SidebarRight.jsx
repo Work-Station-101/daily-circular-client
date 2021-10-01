@@ -1,14 +1,14 @@
 import React from 'react';
-import { Col, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import './SidebarRight.css';
 
 function SidebarRight() {
   return (
-    <Col md={3} className='sidebar-right-col'>
+    <div className='sidebar-right-col'>
       <Container className='sidebar-right-container'>
       </Container>
-    </Col>
+    </div>
   );
 }
 

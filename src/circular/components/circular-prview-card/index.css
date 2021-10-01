@@ -1,0 +1,67 @@
+.cpc-div {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.cpc-header {
+  padding-bottom: 0px;
+}
+
+.cpc-header-info {
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+
+.cpc-header-user-imgae-col {
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.cpc-header-user-image {
+  height: 50px;
+  width: 50px;
+}
+
+.cpc-header-user-name-col {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.cpc-header-date {
+  font-size: 9pt;
+}
+
+.cpc-button {
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.cpc-share-button {
+  float: right;
+}
+
+.card {
+  border-radius: 10px !important;
+}
+.cpc-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cpc-footer-action-btn {
+  border: none;
+  background: none;
+  margin: 2px;
+  color: #0080ff;
+}
+
+.cpc-footer-action-btn:hover {
+  transform: scale(1.6);
+}
+
+.cpc-footer-action-btn-share {
+  float: right;
+}

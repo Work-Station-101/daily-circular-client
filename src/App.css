@@ -1,5 +1,7 @@
 .App {
   height: 100vh;
+  display: grid;
+  grid-template-rows: 60px auto;
 }
 
 .App-logo {
@@ -37,14 +39,13 @@
   }
 }
 
-.main-container {
-  height: 100%;
-}
-
 .top-navbar-row {
-  /* position: ; */
+  /* height: 100%; */
 }
 
 .main-content-row {
   padding-top: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 3fr 6fr 3fr;
 }

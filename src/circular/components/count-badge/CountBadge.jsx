@@ -1,16 +1,15 @@
 import React from 'react';
-import { Badge } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-function CountBadge(props) {
+import './CountBadge.css';
+function CountBadge({ count }) {
   return (
-    <Badge
-      pill
-      bg='secondary'
-      style={{ top: '-15px', fontSize: '5pt' }}
-    >
-      {props.count ?? 0}
-    </Badge>
+    <span className='badge count-badge' pill> {count || 0}</span>
   );
 }
+
+CountBadge.propTypes = {
+  count: PropTypes.number.isRequired,
+};
 
 export default CountBadge;

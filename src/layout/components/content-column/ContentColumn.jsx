@@ -1,22 +1,21 @@
 import React from 'react';
-import { Col, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 
-import MyCirculars from '../circular/components/my-circulars/MyCirculars';
-import Timeline from '../circular/components/timeline/Timeline';
+import Timeline from '../../../circular/components/timeline/Timeline';
+import MyCirculars from '../../../circular/components/my-circulars/MyCirculars';
 
-import { RouteUrls } from '../config';
+import { RouteUrls } from '../../../config';
 import './ContentColumn.css';
 
-function ContentColumn(props) {
-  console.log(props);
+function ContentColumn() {
   return (
-    <Col md={6} className='content-col'>
+    <div className='content-col'>
       <Container fluid className='content-column-container overflow-auto'>
         <Route exact path={[RouteUrls.default, RouteUrls.timeline]} component={Timeline} />
         <Route exact path={RouteUrls.myCirculars} component={MyCirculars} />
       </Container>
-    </Col>
+    </div>
   );
 }
 
