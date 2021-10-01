@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 import Login from './layout/pages/login/Login';
 import Register from './layout/pages/register/Register';
 import TopNavbar from './layout/components/top-navbar/TopNavbar';
-import SidebarLeft from './layout/components/sidebar-left/SidebarLeft';
+import SidebarLeft from './layout/components/sidebar-left';
 import ContentColumn from './layout/components/content-column/ContentColumn';
 import SidebarRight from './layout/components/sidebar-right/SidebarRight';
 import { RouteUrls } from './config';
@@ -27,7 +27,7 @@ function App() {
                 <div className='top-navbar-row'>
                   <TopNavbar />
                 </div>
-                <Container fluid className='main-content-row'>
+                <Container className='main-content-row'>
                   <SidebarLeft />
                   <ContentColumn />
                   <SidebarRight />
