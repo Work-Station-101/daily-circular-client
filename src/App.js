@@ -27,7 +27,7 @@ function App() {
                 <div className='top-navbar-row'>
                   <TopNavbar />
                 </div>
-                <Container className='main-content-row'>
+                <Container fluid className='main-content-row'>
                   <SidebarLeft />
                   <ContentColumn />
                   <SidebarRight />

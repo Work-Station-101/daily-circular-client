@@ -19,19 +19,19 @@ const CircularPreviewCardFooter = ({
           className='cpc-footer-action-btn'
           onClick={onClickViewButton}
         >
-          <FaEye size='30px' />
+          <FaEye size='20px' />
           <CountBadge count={5} />
         </button>
         <button className='cpc-footer-action-btn'>
-          <FaThumbsUp size='30px' />
+          <FaThumbsUp size='20px' />
           <CountBadge />
         </button>
         <button className='cpc-footer-action-btn'>
-          <FaThumbsDown size='30px' />
+          <FaThumbsDown size='20px' />
           <CountBadge />
         </button>
         <button className='cpc-footer-action-btn'>
-          <FaComment size='30px' />
+          <FaComment size='20px' />
           <CountBadge />
         </button>
       </div>
@@ -39,7 +39,7 @@ const CircularPreviewCardFooter = ({
         <button
           className='cpc-footer-action-btn cpc-footer-action-btn-share'
         >
-          <FaShare size='30px' />
+          <FaShare size='20px' />
           <CountBadge />
         </button>
       </div>
