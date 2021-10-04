@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FaTrashAlt } from 'react-icons/fa';
+import TagBadge from '../../../common/components/tag-badge/TagBadge';
 
 const UserPreferedTags = ({
   userPreferedTagsList,
@@ -9,17 +9,11 @@ const UserPreferedTags = ({
     <div className='pref-user-prefered-tags-div'>
       {
         userPreferedTagsList.map((tagName) => (
-          <div key={tagName} className='pref-user-prefered-tag'>
-            <div>{tagName}</div>
-            <div>
-              <button
-                className='pref-user-prefered-tag-delete-btn'
-                onClick={() => handleRemovePreference(tagName)}
-              >
-                <FaTrashAlt size='10pt' />
-              </button>
-            </div>
-          </div>
+          <TagBadge
+            key={tagName}
+            tagName={tagName}
+            onDeleteTag={handleRemovePreference}
+          />
         ))
       }
     </div>

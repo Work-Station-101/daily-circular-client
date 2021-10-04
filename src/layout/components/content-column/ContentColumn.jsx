@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 
 import Timeline from '../../../circular/components/timeline/Timeline';
-import CircularEditor from '../../../circular/components/circular-editor';
+import CircularEditor from '../../../circular-editor/components';
 import MyCirculars from '../../../circular/components/my-circulars/MyCirculars';
 import Profile from '../../../profile/components';
 

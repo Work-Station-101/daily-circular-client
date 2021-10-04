@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
+
 import './index.css';
+
 import UserPreferedTags from './user-prefered-tags/UserPreferedTags';
+import { PreferenceConfig } from '../../config';
 
 const Preference = ({
   circularTagList,
@@ -19,6 +22,7 @@ const Preference = ({
       const tagSet = new Set(userPreferedTagsList);
       tagSet.add(selectedTag);
       setUserPreferedTagsList([...tagSet]);
+      setSelectedTag('');
     }
   }, [selectedTag]);
 
@@ -28,6 +32,9 @@ const Preference = ({
   };
 
   const handleRemovePreference = (tagName) => {
+    if (tagName === '' || tagName === PreferenceConfig.default) {
+      return;
+    }
     const tagSet = new Set(userPreferedTagsList);
     tagSet.delete(tagName);
     setUserPreferedTagsList([...tagSet]);
@@ -40,7 +47,7 @@ const Preference = ({
         value={selectedTag}
         onChange={handlePreferenceSelection}
       >
-        <option>Add preference</option>
+        <option>{PreferenceConfig.default}</option>
         {
           circularTagList
             .filter((circularTag) => !userPreferedTagsList.includes(circularTag.tagName))
