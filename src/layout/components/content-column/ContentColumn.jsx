@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 
 import Timeline from '../../../circular/components/timeline/Timeline';
+import CircularEditor from '../../../circular/components/circular-editor';
 import MyCirculars from '../../../circular/components/my-circulars/MyCirculars';
 import Profile from '../../../profile/components';
 
@@ -14,6 +15,7 @@ function ContentColumn() {
     <div className='content-col'>
       <Container fluid className='content-column-container overflow-auto'>
         <Route exact path={[RouteUrls.default, RouteUrls.timeline]} component={Timeline} />
+        <Route exact path={RouteUrls.createCircular} component={CircularEditor} />
         <Route exact path={RouteUrls.myCirculars} component={MyCirculars} />
         <Route exact path={RouteUrls.profile} component={Profile} />
       </Container>

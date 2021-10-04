@@ -1,0 +1,48 @@
+.ce-container {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-rows: 40px auto 50px;
+}
+
+.ce-title-in {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.wrapper-class {
+  padding: 5px;
+  border: 1px solid #ccc;
+  height: 700px;
+  display: grid;
+  grid-template-rows: 100px auto;
+}
+
+.editor-class {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  border: 1px solid #ccc;
+}
+
+.toolbar-class {
+  border: 1px solid #ccc;
+}
+
+.ce-pub {
+  padding-top: 10px;
+}
+
+.ce-pub-btn {
+  float: right;
+  border-radius: 5px;
+  background-color: rgb(23, 177, 23);
+  color: white;
+}
+
+.ce-pub-btn:hover {
+  transform: scale(1.2);
+}

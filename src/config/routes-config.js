@@ -4,6 +4,7 @@ const RouteUrls = {
   login: '/login',
   registration: '/register',
   timeline: '/timeline',
+  createCircular: '/create-circular',
   myCirculars: '/my-circulars',
   profile: '/profile',
 };

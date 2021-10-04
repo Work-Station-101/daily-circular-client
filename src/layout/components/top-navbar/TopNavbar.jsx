@@ -22,6 +22,7 @@ function TopNavbar() {
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='me-auto'>
             <Nav.Link href={RouteUrls.timeline}>Timeline</Nav.Link>
+            <Nav.Link href={RouteUrls.createCircular}>Create Circular</Nav.Link>
             <Nav.Link href={RouteUrls.myCirculars}>My Circulars</Nav.Link>
             <NavDropdown title='Dropdown' id='collasible-nav-dropdown'>
               <NavDropdown.Item href='/'>Action</NavDropdown.Item>
