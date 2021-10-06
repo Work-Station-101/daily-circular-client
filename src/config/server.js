@@ -1,6 +1,11 @@
 const serverHost = 'localhost';
 const serverPort = 5000;
 
-const server = `http://${serverHost}:${serverPort}`;
+const baseUrl = `http://${serverHost}:${serverPort}`;
+const server = {
+  baseUrl,
+  userAPIBaseUrl: `${baseUrl}/api/user`,
+  circularAPIBaseUrl: `${baseUrl}/api/user`,
+}
 
 export default server;

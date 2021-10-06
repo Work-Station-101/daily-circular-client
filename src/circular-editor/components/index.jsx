@@ -3,7 +3,7 @@ import { useAlert } from 'react-alert';
 import { useHistory } from 'react-router-dom';
 import { ContentState, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
-import uuid from 'react-uuid'
+import uuid from 'react-uuid';
 import draftToHtml from 'draftjs-to-html';
 
 import './index.css';
