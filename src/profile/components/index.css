@@ -1,0 +1,28 @@
+.profile{
+    letter-spacing: 2px;
+    line-height: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.profile .profile-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.profile .header{
+    color: hsl(236, 92%, 61%);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+.profile .title{
+    color: cadetblue;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile li{
+    padding: 8px;
+}
+
