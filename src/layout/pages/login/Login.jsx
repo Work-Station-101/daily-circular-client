@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 import {
   Form,
@@ -12,6 +13,23 @@ import { RouteUrls } from '../../../config';
 import './Login.css';
 
 function Login() {
+
+  const [credential, setCredential] = useState({
+    email: '',
+    password: '',
+  });
+
+  const onChangeField = (e) => {
+    setCredential({
+      ...credential,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleLogin = () => {
+    
+  }
+
   return (
     <Row>
       <Col md={3}></Col>
@@ -23,10 +41,10 @@ function Login() {
           >
             <h2>Welcome to Daily Circular</h2>
           </Container>
-          <Form className='lg-form'>
+          <Form className='lg-form' onSubmit={handleLogin}>
             <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>
-              <Form.Control type='email' placeholder='Enter email' />
+              <Form.Control type='email' placeholder='Enter email' name='email' required onChange={onChangeField} />
               <Form.Text className='text-muted'>
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -34,7 +52,7 @@ function Login() {
 
             <Form.Group className='mb-3' controlId='formBasicPassword'>
               <Form.Label>Password</Form.Label>
-              <Form.Control type='password' placeholder='Password' />
+              <Form.Control type='password' placeholder='Password' name='password' required onChange={onChangeField} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicCheckbox'>
               <Form.Check type='checkbox' label='Remember me' />

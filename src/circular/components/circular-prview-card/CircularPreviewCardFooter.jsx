@@ -7,7 +7,7 @@ import {
   FaThumbsDown,
   FaThumbsUp,
 } from 'react-icons/fa';
-import CountBadge from '../count-badge/CountBadge';
+import CountBadge from '../../../common/components/count-badge/CountBadge';
 
 const CircularPreviewCardFooter = ({
   onClickViewButton,
