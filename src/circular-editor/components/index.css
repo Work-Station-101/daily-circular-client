@@ -27,7 +27,7 @@
 }
 
 .ce-tag-selector {
-  font-size: 8pt;
+  font-size: 8pt !important;
   height: 30px;
   padding-top: 0px;
   padding-bottom: 0px;

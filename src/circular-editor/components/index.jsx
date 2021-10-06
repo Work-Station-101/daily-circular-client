@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useAlert } from 'react-alert';
+import { useHistory } from 'react-router-dom';
 import { ContentState, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
+import uuid from 'react-uuid'
+import draftToHtml from 'draftjs-to-html';
 
 import './index.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import AddTags from './circular-tags/CircularTags';
-import { CircularConfig } from '../../config';
+import { CircularConfig, RouteUrls } from '../../config';
+import CircularService from '../../circular/service';
 
 const CircularEditor = ({
-  allTags=[
+  allTags = [
     { _id: '1', tagName: 'Job' },
     { _id: '2', tagName: 'Admission' },
     { _id: '3', tagName: 'House rent' },
@@ -21,10 +26,13 @@ const CircularEditor = ({
 }) => {
   const [title, setTitle] = useState(CircularConfig.initialTitile);
   const [tagList, setTagList] = useState(allTags || []);
-  const [selectedTagIds, setSelectedTagIds] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
   let _contentState = ContentState.createFromText(CircularConfig.initialText);
   const raw = convertToRaw(_contentState);
   const [contentState, setContentState] = useState(raw);
+
+  const alert = useAlert();
+  const history = useHistory();
 
   useEffect(() => {
   }, [contentState, raw]);
@@ -32,9 +40,7 @@ const CircularEditor = ({
   const onTagChange = (e) => {
     const newTag = e.target.value;
     const newTagId = tagList.find((tag) => tag.tagName === newTag)?._id;
-    const tagIds = new Set(selectedTagIds);
-    tagIds.add(newTagId);
-    setSelectedTagIds([...tagIds]);
+    setSelectedTags([...selectedTags, tagList.find((tag) => tag._id === newTagId)]);
     setTagList(tagList.filter((tag) => tag._id !== newTagId));
   };
 
@@ -43,14 +49,23 @@ const CircularEditor = ({
     if (!tagToRemove) {
       return;
     }
-    setSelectedTagIds(selectedTagIds.filter((tagId) => tagId !== tagToRemove._id));
+    setSelectedTags(selectedTags.filter((tag) => tag._id !== tagToRemove._id));
     if (!tagList.find((tag) => tag._id === tagToRemove._id)) {
       setTagList([...tagList, tagToRemove]);
     }
   };
 
   const onSubmit = () => {
-    console.log(title, raw);
+    CircularService.createOrUpdateCircular({
+      guid: uuid(),
+      title,
+      body: draftToHtml(contentState).toString(),
+      tags: selectedTags.map((tag) => tag.tagName),
+    }).then(() => {
+      alert.success('Circulat has been posted successfully!');
+    }).finally(() => {
+      history.push(RouteUrls.myCirculars);
+    });
   };
 
   return (
@@ -65,7 +80,7 @@ const CircularEditor = ({
       </div>
       <AddTags
         tagList={tagList}
-        selectedTags={allTags.filter((tag) => selectedTagIds.includes(tag._id))}
+        selectedTags={selectedTags}
         onTagChange={onTagChange}
         onRemoveTag={onRemoveTag}
       />
