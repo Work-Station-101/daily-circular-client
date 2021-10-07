@@ -1,11 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
 
-const CircularPreviewCardHeader = () => {
+const CircularPreviewCardHeader = ({
+  title,
+  postedOn,
+}) => {
   return (
     <React.Fragment>
       <div>
-        <Card.Title>Special title treatment</Card.Title>
+        <Card.Title>{title}</Card.Title>
       </div>
       <div className='cpc-header-info'>
         <div
@@ -24,12 +28,19 @@ const CircularPreviewCardHeader = () => {
             <h6>{'FirstName LastName'}</h6>
           </div>
           <div>
-            <p className='cpc-header-date'><strong>Posted on: </strong>{(new Date()).toDateString()}</p>
+            <p className='cpc-header-date'>
+              <strong>Posted on: </strong>{(new Date(postedOn)).toDateString()}
+            </p>
           </div>
         </div>
       </div>
     </React.Fragment>
   );
+};
+
+CircularPreviewCardHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  postedOn: PropTypes.string.isRequired,
 };
 
 export default CircularPreviewCardHeader;

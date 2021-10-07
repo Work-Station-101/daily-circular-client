@@ -10,9 +10,15 @@ const createOrUpdateCircular = async (circular) => {
   }
 };
 
+const getCirculars = async (tagList) => {
+  const response = await axios.post(`${server.circularAPIBaseUrl}/circulars`, { tagList });
+  return response.data;
+};
+
 
 const CircularService = {
   createOrUpdateCircular,
+  getCirculars,
 };
 
 export default CircularService;

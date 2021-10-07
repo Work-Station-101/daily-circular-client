@@ -10,6 +10,8 @@ import {
 import CountBadge from '../../../common/components/count-badge/CountBadge';
 
 const CircularPreviewCardFooter = ({
+  meta,
+  commentCount,
   onClickViewButton,
 }) => {
   return (
@@ -20,19 +22,19 @@ const CircularPreviewCardFooter = ({
           onClick={onClickViewButton}
         >
           <FaEye size='20px' />
-          <CountBadge count={5} />
+          <CountBadge count={meta.views} />
         </button>
         <button className='cpc-footer-action-btn'>
           <FaThumbsUp size='20px' />
-          <CountBadge />
+          <CountBadge count={meta.likes} />
         </button>
         <button className='cpc-footer-action-btn'>
           <FaThumbsDown size='20px' />
-          <CountBadge />
+          <CountBadge count={meta.dislikes} />
         </button>
         <button className='cpc-footer-action-btn'>
           <FaComment size='20px' />
-          <CountBadge />
+          <CountBadge count={commentCount} />
         </button>
       </div>
       <div>
@@ -40,7 +42,7 @@ const CircularPreviewCardFooter = ({
           className='cpc-footer-action-btn cpc-footer-action-btn-share'
         >
           <FaShare size='20px' />
-          <CountBadge />
+          <CountBadge count={meta.shares} />
         </button>
       </div>
     </React.Fragment>
@@ -48,6 +50,8 @@ const CircularPreviewCardFooter = ({
 };
 
 CircularPreviewCardFooter.propTypes = {
+  meta: PropTypes.object.isRequired,
+  commentCount: PropTypes.number.isRequired,
   onClickViewButton: PropTypes.func.isRequired,
 };
 

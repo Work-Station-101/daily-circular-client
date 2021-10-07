@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { } from 'react-bootstrap';
+import CircularService from '../../service';
 import CircularPreviewCard from '../circular-prview-card';
 
 import './Timeline.css';
 
 function Timeline() {
+  const [circulars, setCirculars] = useState([]);
+
+  useEffect(() => {
+    let mounted = true;
+    CircularService.getCirculars([])
+      .then((circularList) => setCirculars(circularList));
+
+    return () => mounted = false;
+  }, []);
+
   return (
     <div>
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
-      <CircularPreviewCard />
+      {
+        circulars.map((circular) => (
+          <CircularPreviewCard
+            circular={circular}
+          />
+        ))
+      }
     </div>
   );
 }

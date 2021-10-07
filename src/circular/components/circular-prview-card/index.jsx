@@ -8,33 +8,31 @@ import CircularPreviewCardHeader from './CircularPreviewCardHeader';
 import './index.css';
 
 const CircularPreviewCard = ({
-  circularId,
+  circular,
 }) => {
-  const [circular, setCircular] = useState(null);
   const [showCircularModel, setShowCircularModel] = useState(false);
 
   return (
     <div className='cpc-div'>
       <Card>
         <Card.Header className='cpc-header'>
-          <CircularPreviewCardHeader />
+          <CircularPreviewCardHeader
+            title={circular.title}
+            postedOn={circular.createdAt}
+          />
         </Card.Header>
         <Card.Body>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
-            With supporting text below as a natural lead-in to additional content.
-            With supporting text below as a natural lead-in to additional content.
-            With supporting text below as a natural lead-in to additional content.
-            With supporting text below as a natural lead-in to additional content.
-          </Card.Text>
+          <div dangerouslySetInnerHTML={{ __html: circular.body }} />
         </Card.Body>
         <Card.Footer className='cpc-footer'>
-          <CircularPreviewCardFooter 
-            onClickViewButton={() => setShowCircularModel(true)}
+          <CircularPreviewCardFooter
+            meta={circular.meta}
+            commentCount={circular.comments.length}
+            onClickViewButton={() => { }}
           />
         </Card.Footer>
       </Card>
-      <CircularModal 
+      <CircularModal
         showModal={showCircularModel}
         handleClose={() => setShowCircularModel(false)}
         circular={circular}
@@ -44,7 +42,7 @@ const CircularPreviewCard = ({
 };
 
 CircularPreviewCard.propTypes = {
-  circularId: PropTypes.string,
+  circular: PropTypes.object.isRequired,
 };
 
 export default CircularPreviewCard;
