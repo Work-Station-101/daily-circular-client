@@ -3,6 +3,8 @@ import react, {useState} from 'react'
 import './index.css'
 
 export default function Profile() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
   return (
     <div className="profile">
     <div className="row">
@@ -11,10 +13,10 @@ export default function Profile() {
       </div>
       <div className="col-sm-2"></div>
       <div className="col-sm-6">
-        <h3>Kamrun Hasan Tushar</h3>
-        <p><b>Linkedin:</b> <a href="#">tushar</a></p>
-        <p><b>github: </b><a href="#">tushar</a></p>
-        <p><b>Email: </b>tushar@email.com</p>
+        <h3>{currentUser.firstName + ' ' + currentUser.lastName}</h3>
+        <p><b>Linkedin:</b> <a href="#">{currentUser.firstName + ' ' + currentUser.lastName}</a></p>
+        <p><b>github: </b><a href="#">{currentUser.firstName + ' ' + currentUser.lastName}</a></p>
+        <p><b>Email: </b>{currentUser.email}</p>
         <p><b>Phone: </b>+88011111111</p>
       </div>
     </div>
@@ -24,7 +26,7 @@ export default function Profile() {
       <p className="header">
         experience
       </p>
-      <p className="title">NewsCrid, Dhaka-1212, Bangladesh - <i>Software Engineer</i></p>
+      <p className="title">XYZ, Dhaka-1212, Bangladesh - <i>Software Engineer</i></p>
       <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ipsam quia impedit</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam iure suscipit earum fuga, deserunt accusantium</li>
       <li>Lorem ipsum dolor sit amet consectetur.</li>
@@ -44,7 +46,7 @@ export default function Profile() {
       <p className="header">
         education
       </p>
-      <p className="title">University of Asia Pacific, Dhaka-1205, Bangladesh - <i>Bachelor of Science in Computer Science and Engineering</i></p>
+      <p className="title">University of Liberal Arts, Dhaka-1216, Bangladesh - <i>Bachelor of Science in Computer Science and Engineering</i></p>
       <p>MARCH 2013 - JULY 2018</p>
     </div>
     <div style={{"marginTop": 20}}/>
