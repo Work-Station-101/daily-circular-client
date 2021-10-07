@@ -18,6 +18,7 @@ const CircularPreviewCard = ({
         <Card.Header className='cpc-header'>
           <CircularPreviewCardHeader
             title={circular.title}
+            createdBy={circular.createdBy}
             postedOn={circular.createdAt}
           />
         </Card.Header>

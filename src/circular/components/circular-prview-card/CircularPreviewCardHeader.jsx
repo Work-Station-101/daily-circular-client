@@ -5,6 +5,7 @@ import { Card, Image } from 'react-bootstrap';
 const CircularPreviewCardHeader = ({
   title,
   postedOn,
+  createdBy,
 }) => {
   return (
     <React.Fragment>
@@ -25,7 +26,7 @@ const CircularPreviewCardHeader = ({
           className='cpc-header-user-name-col'
         >
           <div>
-            <h6>{'FirstName LastName'}</h6>
+            <h6>{createdBy.firstName + ' ' + createdBy.lastName}</h6>
           </div>
           <div>
             <p className='cpc-header-date'>
@@ -40,6 +41,7 @@ const CircularPreviewCardHeader = ({
 
 CircularPreviewCardHeader.propTypes = {
   title: PropTypes.string.isRequired,
+  createdBy: PropTypes.object.isRequired,
   postedOn: PropTypes.string.isRequired,
 };
 

@@ -35,7 +35,6 @@ const CircularEditor = ({
   const history = useHistory();
 
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  console.log('-----', currentUser);
 
   useEffect(() => {
   }, [contentState, raw]);
@@ -64,6 +63,12 @@ const CircularEditor = ({
       title,
       body: draftToHtml(contentState).toString(),
       tags: selectedTags.map((tag) => tag.tagName),
+      creatorGUID: currentUser.guid,
+      createdBy: {
+        firstName: currentUser.firstName,
+        lastName: currentUser.lastName,
+        email: currentUser.email,
+      },
     }).then(() => {
       alert.success('Circulat has been posted successfully!');
     }).finally(() => {
