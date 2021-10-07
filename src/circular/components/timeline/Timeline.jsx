@@ -22,6 +22,7 @@ function Timeline() {
       {
         circulars.map((circular) => (
           <CircularPreviewCard
+            key={circular.guid}
             circular={circular}
           />
         ))

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
@@ -14,28 +14,40 @@ import { alertOptions, RouteUrls } from './config';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UserContext from './user/context';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+
   return (
     <AlertProvider template={AlertTemplate} {...alertOptions}>
       <div className='App'>
         <BrowserRouter>
           <Switch>
-            <Route exact path={RouteUrls.login} component={Login} />
+            <Route
+              exact
+              path={RouteUrls.login}
+              render={() => (
+                <Login setCurrentUser={setCurrentUser} />
+              )}
+            />
             <Route exact path={RouteUrls.registration} component={Register} />
             <Route
               path={RouteUrls.base}
               render={() => (
-                <React.Fragment>
-                  <div className='top-navbar-row'>
-                    <TopNavbar />
-                  </div>
-                  <Container fluid className='main-content-row'>
-                    <SidebarLeft />
-                    <ContentColumn />
-                    <SidebarRight />
-                  </Container>
-                </React.Fragment>
+                localStorage.getItem('currentUser') ?
+                  (<UserContext.Provider value={currentUser}>
+                    <React.Fragment>
+                      <div className='top-navbar-row'>
+                        <TopNavbar />
+                      </div>
+                      <Container fluid className='main-content-row'>
+                        <SidebarLeft />
+                        <ContentColumn />
+                        <SidebarRight />
+                      </Container>
+                    </React.Fragment>
+                  </UserContext.Provider>) : null
               )}
             />
           </Switch>

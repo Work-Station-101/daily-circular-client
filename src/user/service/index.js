@@ -14,7 +14,16 @@ const createUser = async (user) => {
   }
 };
 
+const authentication = async (credential) => {
+  const response = await axios.post(`${server.userAPIBaseUrl}/login`, credential);
+  if (!response.data) {
+    throw new Error();
+  }
+  return response;
+};
+
 export default {
-  findUserByEmail,
+  authentication,
   createUser,
+  findUserByEmail,
 };

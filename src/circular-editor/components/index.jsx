@@ -34,6 +34,9 @@ const CircularEditor = ({
   const alert = useAlert();
   const history = useHistory();
 
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  console.log('-----', currentUser);
+
   useEffect(() => {
   }, [contentState, raw]);
 

@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useAlert } from 'react-alert';
+import { useHistory } from 'react-router-dom';
 
 import {
   Form,
@@ -10,9 +13,16 @@ import {
 } from 'react-bootstrap';
 
 import { RouteUrls } from '../../../config';
+import UserService from '../../../user/service';
+
 import './Login.css';
 
-function Login() {
+function Login({
+  setCurrentUser,
+}) {
+
+  const alert = useAlert();
+  const history = useHistory();
 
   const [credential, setCredential] = useState({
     email: '',
@@ -26,8 +36,20 @@ function Login() {
     });
   };
 
-  const handleLogin = () => {
-    
+  const handleLogin = (e) => {
+    e.preventDefault();
+    UserService.authentication(credential).then((res) => {
+      if (!res.data) {
+        alert.error('Invalid credential!');
+      } else {
+        localStorage.setItem('currentUser', JSON.stringify(res.data));
+        setCurrentUser(res.data);
+        alert.success('Welcome to Daily Circular!');
+        history.push(RouteUrls.timeline);
+      }
+    }).catch((err) => {
+      alert.error('Invalid credential!');
+    });
   }
 
   return (
@@ -80,5 +102,9 @@ function Login() {
     </Row>
   );
 }
+
+Login.propTypes = {
+  setCurrentUser: PropTypes.func.isRequired,
+};
 
 export default Login;
